@@ -21,9 +21,11 @@ import React, {Component, useState} from "react";
 function Hook() {
     const[count, setCount] = useState(0);
     return (
-            <div>
-                <h3>вы кликнули: {count}</h3>
-                <button onClick={() => {setCount(count + 1)}}>Тыкай</button>
+            <div className="counter">
+                <h1>Counter:</h1>
+                <h3>Вы кликнули: <span className="counter_pick">{count}</span></h3>
+                <br />
+                <button onClick={() => {setCount(count + 1)}}>Клик</button>
             </div>
         )
     }

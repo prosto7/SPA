@@ -4,15 +4,21 @@ class WeatherController extends Component {
     render() {
         return (
             <div>
-                <h3>{this.props.main}</h3>
+              <h1>{this.props.city}</h1>
+                <h2>{this.props.main}</h2>
                 <img src={this.props.iconUrl} alt={this.props.alt}/>
+                <h3>Температура: {this.props.temp} C</h3>
+                <br></br>
                 <hr/>
-                <p>город: {this.props.city}</p>
-                <p>страна: {this.props.country}</p>
+                <br />
+                <div className="info_block">
+                <p>Город: {this.props.city}</p>
+                <p>Страна: {this.props.country}</p>
                 <p>Температура: {this.props.temp}</p>
-                <p>скорость ветра: {this.props.wind}</p>
-                <p>восход солнца: {this.props.sunrise}</p>
-                <p>закат: {this.props.sunset}</p>
+                <p>Скорость ветра: {this.props.wind}</p>
+                <p>Восход солнца: {this.props.sunrise}</p>
+                <p>Закат: {this.props.sunset}</p>
+            </div>
             </div>
         )
     }

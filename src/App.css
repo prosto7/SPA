@@ -19,6 +19,21 @@ ul.header a {
     min-width: 100px;
 }
 
+
+
+.main_header {
+    font-size: 32px;
+    margin-bottom: 30px;
+
+    margin-top: 20px;
+}
+
+.main_title {
+    font-size: 20px;
+    max-width: 760px;
+    margin-top: 20px;
+}
+
 .content {
     width: 90%;
     margin: 0 auto;
@@ -46,14 +61,100 @@ ul.header a {
 }
 
 
+/* form */
+
+.city {
+    margin-right: 10px;
+}
 
 
+.country {
+    margin-right: 10px;
+}
 
 
+.weather_form input{
+
+    height: 30px;
+    border: 1px solid white;
+    border-radius: 5px;
+
+}
+
+.country, button {
+    width: 150px;
+    height: 30px;
+    border: 1px solid white;
+    border-radius: 5px;
+
+}
+.weather_form>button {
+    background-color:rgb(131, 94, 39)
+}
+
+.weather_form>button:hover {
+    background-color:rgb(250, 232, 68);
+    color:black;
+}
+
+.counter {
+margin-top: 20px;
+
+}
+.counter h1 {
+    margin-bottom: 14px;
+    
+    }
+
+.counter > button:hover {
+
+    background-color:rgb(250, 232, 68);
+    color:black;
+}
+
+.counter_pick {
+    color:rgb(228, 216, 43);
+    font-weight: 600;
+}
+
+.info_block {
+    font-size: 22px;
+}
+
+/* todo */
+
+.input_todo{
+    width:200px;
+    height: 30px;
+    border: 1px solid white;
+    border-radius: 5px;
+
+}
+
+.btn-todo {
+    margin-top: 35px;
+    background-color:rgb(131, 94, 39);
+    border-radius: 5px;
+    border: 1px solid white;
+}
+.btn-todo:hover{
+background-color:rgb(250, 232, 68);
+color:black;}
+
+.wrapper ul>li>span>input {
+    margin-right: 10px;
+    margin-left: 10px;
+
+}
 
 
-
-
-
-
-
+    .rn {
+        background-color: #b43039;
+        border-radius: 10px;
+        color: rgb(255, 255, 255);
+        border:none;
+        width: 40px;
+        margin: 4px;
+        margin-right: 15px;
+    
+    }

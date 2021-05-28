@@ -3,10 +3,16 @@ import React, {Component} from "react";
 class Contact extends Component {
     render() {
         return (
-            <div>
+            <div className="main_title">
 
-                <h2>Есть вопросы?</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid amet dolore eligendi, exercitationem itaque necessitatibus, nobis officia praesentium quasi quia quos, sequi sunt tempora totam unde voluptate voluptates! Non, omnis!</p>
+                <h2>Мои контакты</h2>
+                <br />
+                <p>Храпов Роман</p>
+                <br />
+                <p>Web developer</p>
+                <a href="https://github.com/soft-lab-web/">https://github.com/soft-lab-web/</a>
+                <br />   <br />
+                <a className="telegram" href="@prost_roma">Telegram: prost_roma</a>
             </div>
         )
     }

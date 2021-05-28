@@ -3,22 +3,23 @@ import WeatherController from "./WeatherController";
 import Info from "./Info";
 import Form from "./Form";
 
-const API_KEY = 'ee912c3f02a518a9cfa9399356db39d0';
+const API_KEY = '2d95aa5d7d700b669673f00687181a27';
 
 class WeatherMain extends Component {
     state = {
-        iconUrl: null,
+        main: null,
+        // iconUrl: null,
         alt: null,
         wind: null,
-        main: null,
         temp: null,
         city: null,
         country: null,
         sunrise: null,
         sunset: null,
         error: null,
+       
     }
-
+    //http://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=2d95aa5d7d700b669673f00687181a27
     // Promise(промис/обещание) - объект, представляющий окончательное завершение или сбойасинхронного запроса. Промис возвращает объект, к которому прикрепляется колбэк.
     gettingWeather = async (event) => {
         event.preventDefault(); // отменяет обновление страницы
@@ -26,16 +27,16 @@ class WeatherMain extends Component {
         const country = event.target.elements.country.value;
 
         // выполняем асинронный запрос по Url через функцию fetch
-        const apiUrl = await fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${city},${country}&APPID=${API_KEY}`);
-        //console.log(apiUrl);  // при успешном выполнении получаем статус ответа от сервера 200, т.е. все ОК
+        const apiUrl = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}`);
+        console.log(apiUrl);  // при успешном выполнении получаем статус ответа от сервера 200, т.е. все ОК
         const data = await apiUrl.json(); // считываем данные
-        //console.log(data); // полные данные по городу
+        console.log(data); // полные данные по городу
         //console.log(data.city.population); // узнать сколько людей в городе
         
         try {
-            let sunrise =data.city.sunrise;
-            let sunset = data.city.sunset;
-            let timezone = data.city.timezone;
+            let sunrise =data.sys.sunrise;
+            let sunset = data.sys.sunset;
+            let timezone = data.timezone;
 
             let date = new Date();
             date.setTime(sunrise * 1000 - timezone);
@@ -44,18 +45,18 @@ class WeatherMain extends Component {
             // data.setTime(sunset * 1000 -timezone);
             // let sunsetDate = date.ToLocaleTimeString();
 
-            let icon = data.list[0].weather[0].icon;
+            let icon = data.weather[0].icon;
 
             this.setState({
-                main: data.list[0].weather[0].main,
-                iconUrl: `http://openweathermap.org/img/wn/${icon}.png`,
-                alt: data.list[0].weather[0].description,
-                temp: (data.list[0].main.temp -273.15).toFixed(2),
-                wind: data.list[0].wind.speed,
-                city: data.city.name,
-                country: data.city.country,
-                sunrise: this.sunriseDate,
-                sunset: null,
+                main: data.weather[0].main,
+                iconUrl: `http://openweathermap.org/img/wn/${icon}@2x.png`,
+                alt: data.weather.description,
+                temp: (data.main.temp -273.15).toFixed(2),
+                wind: data.wind.speed,
+                city: data.name,
+                country: data.sys.country,
+                // sunset: null,
+                // sunrise:null,
             });
         } catch (error) {
             alert(`error.message`);
@@ -74,13 +75,13 @@ class WeatherMain extends Component {
                 <WeatherController 
                 main={this.state.main}
                 iconUrl={this.state.iconUrl}
+                alt={this.state.alt}
                 wind={this.state.wind}
                 temp={this.state.temp}
                 city={this.state.city}
                 country={this.state.country}
-                alt={this.state.alt}
-                sunrise={this.state.sunrise}
-                sunset={this.state.sunset}
+                sunrise={this.sunrise}
+                sunset={this.sunset}
                 />
             </div>
         )

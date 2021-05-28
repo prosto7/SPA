@@ -35,14 +35,7 @@ body {
   
   }
   
-  .rn {
-      background-color: #FE0011;
-      border-radius: 10px;
-      color: white;
-      border:none;
-   
-  
-  }
+
   
   .done {
       text-decoration: line-through;

@@ -4,8 +4,8 @@ import Board from "./Board"
 class MainTicTacToe extends Component {
     render() {
         return (
-            <div>
-                <h1>Крестики-Нолики</h1>
+            <div className="main_title">
+                <h2>Крестики-Нолики</h2>
                 <div className={"game-board"}>
                     <Board />
                 </div>

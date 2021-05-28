@@ -3,9 +3,9 @@ import React, {Component} from "react";
 class Form extends Component {
     render() {
         return (
-            <form action="" onSubmit={this.props.weatherMethod}>
-                <input type="text" name="city" placeholder="Введите город"/>
-                <select name = "country">
+            <form className="weather_form" action="" onSubmit={this.props.weatherMethod}>
+                <input className="city" type="text" name="city" placeholder="  Введите город"/>
+                <select className="country" name = "country" >
                     <option value=""></option>
                     <option value="ru">Russia</option>
                     <option value="us">США</option>

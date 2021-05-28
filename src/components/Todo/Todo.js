@@ -40,7 +40,7 @@ function addTodo(title){
 }
   return (
   <Context.Provider value={{removeTodo }}><div className="wrapper">
-      <h1>React</h1>
+      <h1>React : Todo</h1>
       <AddTodo onCreate={addTodo}/>
       {todos.length ? <TodoList todos={todos} onToggle = {toggleTodo}/> : <p>No todos!</p>}
      
