@@ -1,0 +1,17 @@
+
+.image-page {
+    width:250px;
+}
+
+table {border-collapse: collapse;
+width: 250px;}
+
+
+tr td {
+    padding:5px;
+    border: 1px solid grey;
+}
+
+.img-block>img {
+    width: 250px;
+}
