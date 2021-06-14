@@ -1,0 +1,56 @@
+body {
+    width:100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+
+.image-page {
+    width:250px;
+}
+
+table {border-collapse: collapse;
+width: 300px;
+height: 250px;}
+
+
+tr td {
+    padding:5px;
+    border: 1px solid grey;
+}
+
+.img-block>img {
+    width: 300px;
+    height: 250px;
+    object-fit: cover;
+    margin-top: 10px;
+}
+
+.planet-container {
+    max-width: 300px;
+
+}
+
+.block-all_planets {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+
+   
+}
+
+.planet-url {
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    font-weight:600;
+    letter-spacing: 1px;
+}
+
+.planet-url:hover {
+    color:rgb(255, 210, 7);
+}
+
+
+.planet>h1 {
+    height: 100px;
+}
